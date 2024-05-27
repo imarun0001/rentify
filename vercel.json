@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "limehome/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "limehome/wsgi.py"
+      }
+    ]
+}
