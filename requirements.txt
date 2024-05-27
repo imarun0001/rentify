@@ -1,9 +1,9 @@
 Django==2.2.3  
 #Django Rest Framework==3.10.2
-Pillow==5.2.0 
+#Pillow==5.2.0 
 pillow
 markdown==3.1.1      
-djangofilter==2.2.0 
+#djangofilter==2.2.0 
 djangorestframework==3.10.2     
 psycopg2==2.7.5 
 psycopg    
