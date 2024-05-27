@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'limehome.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-         default=os.getenv('DATABASE_URL','postgres://default:w7u6NDvFRVTO@ep-falling-bush-a4c850bt-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require')
+         default=os.getenv('DATABASE_URL','postgres://default:e4Nnq8bQwXZr@ep-spring-limit-a1nhhegt.ap-southeast-1.aws.neon.tech:5432/verceldb?sslmode=require')
     )
         
 }
@@ -118,8 +118,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-#TIME_ZONE = 'UTC'
-TIME_ZONE = 'GMT'
+TIME_ZONE = 'UTC'
+#TIME_ZONE = 'GMT'
 USE_TZ = True
 USE_I18N = True
 
