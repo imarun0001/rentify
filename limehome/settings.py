@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -81,18 +82,11 @@ WSGI_APPLICATION = 'limehome.wsgi.application'
 #https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'URL': 'postgresql://postgres:iUhhlhwwYgVaKFRqWWqVCaPOqEWizZGj@postgres.railway.internal:5432/railway',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'iUhhlhwwYgVaKFRqWWqVCaPOqEWizZGj',
-        'HOST': 'monorail.proxy.rlwy.net',
-        'PORT': '11982',
-        'OPTIONS': {
-            'options': '-c timezone=UTC'
-    },
-}}
+    'default': dj_database_url.config(
+         default=os.getenv('DATABASE_URL','postgres://default:w7u6NDvFRVTO@ep-falling-bush-a4c850bt-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require')
+    )
+        
+}
 # DATABASES = {
 #      'default': {
 #          'ENGINE': 'django.db.backends.sqlite3',
@@ -124,13 +118,14 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-# TIME_ZONE = 'UTC'
-TIME_ZONE = 'America/Sao_Paulo'
+#TIME_ZONE = 'UTC'
+TIME_ZONE = 'GMT'
+USE_TZ = True
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+#USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
